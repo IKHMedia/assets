@@ -5,7 +5,7 @@ const SINGLE = [{name: "Alert", subpages: [{name: "single-alert-page", duration:
 const MULTIPLE = [{name: "Alerts", subpages: [{name: "multiple-alerts-page", duration: 7000}]},{name: "Now", subpages: [{name: "current-page", duration: 8000}, {name: "radar-page", duration: 8000}, {name: "zoomed-radar-page", duration: 8000}]},{name: "Tonight", subpages: [{name: "tonight-page", duration: 8000}]},{name: "Beyond", subpages: [{name: "tomorrow-page", duration: 8000}, {name: "7day-page", duration: 13000}]},]
 const WEEKDAY = ["SUN",  "MON", "TUES", "WED", "THU", "FRI", "SAT"];
 
-const jingle = new Audio("assets/music/jingle.wav")
+const jingle = new Audio("https://listen.ikhmedia.com/WZTR")
 
 const crawlSpeedCasual = 10; // A normal reading pace, in characters per second
 const crawlSpeedFast = 20; // A fast reading pace, in characters per second
@@ -18,11 +18,8 @@ var currentLogoIndex = 0;
 var pageOrder;
 var music;
 
-window.onload = function () {
-
-  CONFIG.addLocationOption('airport-code', 'Airport', 'ATL or KATL')
-  CONFIG.addLocationOption('zip-code', 'Postal', '00000')
-
+window.onload = function() {
+  CONFIG.addOption('zip-code', 'ZIP Code', '00000')
   CONFIG.addOption('crawlText', 'Crawl Text', 'Text that scrolls along the bottom')
   CONFIG.addOption('greetingText', 'Greeting Text', 'Message (or joke) that appears at the start')
   CONFIG.load();
